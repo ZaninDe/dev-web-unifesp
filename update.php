@@ -3,22 +3,22 @@
    require('DBconnection.php');
 
    //variables
-   $nameProject=$_POST['nameProject'];
+   $id=$_POST['id'];
 
    $name=$_POST['name'];
    $status=$_POST['status'];
    $endTime=$_POST['endTime'];
 
-   $stmt = $conn->prepare("UPDATE PROJECTS SET Name = ?, Status = ?, EndTime = ? WHERE Name = ?);
-   $stmt->bind_param('ssss',$name, $status, $endTime, $nameProject);
+   $stmt = $conn->prepare("UPDATE PROJECTS SET Name = ?, Status = ?, EndTime = ? WHERE Id = ?");
+   $stmt->bind_param('sssi',$name, $status, $endTime, $id);
    $stmt->execute();
 
    if($stmt) {
-    echo 'ok';
+    echo "<br> modify successfully!";
    } else {
-    echo 'error';
+    echo "<br> Error to modify!";
    } 
-
+   
    $conn->close();
 
 ?>
