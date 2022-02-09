@@ -4,7 +4,7 @@
 
    //variables
    $user=$_POST['user'];
-   $password=$_POST['password'];
+   $password=MD5($_POST['password']);
    $checkPassword=$_POST['checkPasswork'];
 
    if(password==checkPassword) {
@@ -18,6 +18,11 @@
     echo "User created = ".$newUser;
    } else {
        echo "Retype the password";
+       echo '<br><br>';
+
+      echo '<form method="post" action="createAccountForm.html">';
+        echo '<input type="submit" value="Back">';
+      echo '</form>';
    }
 
    $conn->close();
