@@ -21,4 +21,7 @@
    
    $conn->close();
 
+   echo "<script>window.location
+   .href='select.php';</script>";
+
 ?>

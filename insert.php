@@ -1,15 +1,12 @@
 <?php
-    // db connection
-    require('DBconnection.php');
+   // db connection
+   require('DBconnection.php');
 
-    //variables
-  //  $name=$_POST['name'];
-  //  $status=$_POST['status'];
-   // $endTime=$_POST['endTime'];
+   //variables
+   $name=$_POST['name'];
+   $status=$_POST['status'];
+   $endTime=$_POST['endTime'];
 
-   $name="ZZanin";
-   $status="in Progress";
-   $endTime="10/10/2022";
 
    $stmt = $conn->prepare("INSERT INTO PROJECTS(Name, Status, EndTime) VALUES (?,?,?)");
    $stmt->bind_param('sss',$name, $status, $endTime);
@@ -20,5 +17,8 @@
    echo "ID created = ".$newID;
 
    $conn->close();
+
+   echo "<script>window.location
+   .href='select.php';</script>";
 
 ?>

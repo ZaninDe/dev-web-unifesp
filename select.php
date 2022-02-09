@@ -1,5 +1,11 @@
 <?php
     require('DBconnection.php');
+    echo '<h1>DashBoard</h1>';
+    echo '<br><br>';
+
+    echo '<a href="formInsert.html">Add Task</a>';
+    echo '<a href="formUpdate.html">Edit Task</a>';
+    echo '<a href="formDelete.html">Delete Task</a>';
 
     $results = $conn->query("SELECT * FROM PROJECTS ORDER BY Id ASC");
 
@@ -26,4 +32,5 @@
 
     $results->free();
     $conn->close();
+    
 ?>
