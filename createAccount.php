@@ -17,7 +17,7 @@
     $newUser = $stmt->insert_user;
     echo "User created = ".$newUser;
    } else {
-       echo "Retype the password"
+       echo "Retype the password";
    }
 
    $conn->close();
