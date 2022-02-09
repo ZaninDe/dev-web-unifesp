@@ -1,26 +1,21 @@
 <html>
+<link rel="stylesheet" href="./global.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
 
 <body>
+    <div class="container">
+        <h2>Login</h2>
+        <form method="post" action="login.php">
+            <input type="text" id="user" name="user" placeholder="User"><br>
+            <input type="password" id="password" name="password" placeholder="Password"><br>
+            <br>
+            <input type="submit" value="Submit">
 
-    <h2>Login</h2>
-
-    <form method="post" action="login.php">
-
-        <label for='user'>User</label><br>
-        <input type="text" id="user" name="user"><br>
-
-        <label for='status'>Password</label><br>
-        <input type="password" id="password" name="password"><br>
-
-        <br>
-
-        <input type="submit" value="Submit">
-
-        <a href="createAccountForm.html">Sign Up</a>
-
-    </form>
-
-
+            <a href="createAccountForm.html">Sign Up</a>
+        </form>
+    </div>
 
 
 </body>
