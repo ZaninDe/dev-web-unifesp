@@ -10,6 +10,7 @@ $conn = new MySQLi($servername, $bd, $password, $username);
 // Check connection
 if ($conn->connect_error) {
   echo "Connection failed: " . $conn->connect_error;
+  echo '<br>'
 } else
 echo "Connected successfully";
 ?>
