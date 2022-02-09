@@ -4,20 +4,23 @@
 
    //variables
    $user=$_POST['user'];
-   $password=MD5($_POST['password']);
-   $checkPassword=$_POST['checkPasswork'];
+   $password=$_POST['password'];
+   $checkPassword=$_POST['checkPassword'];
 
-   if(password==checkPassword) {
+
+   if($password==$checkPassword) {
+
+    $newPassword = MD5($password);
 
     $stmt = $conn->prepare("INSERT INTO USERS(User, Password) VALUES (?,?)");
-    $stmt->bind_param('ss',$user, $password);
+    $stmt->bind_param('ss',$user, $newPassword);
 
     $stmt->execute();
 
-    $newUser = $stmt->insert_user;
-    echo "User created = ".$newUser;
+    $newID = $stmt->insert_id;
+    echo "User created ID  = ".$newID;
    } else {
-       echo "Retype the password";
+       echo "The password not match";
        echo '<br><br>';
 
       echo '<form method="post" action="createAccountForm.html">';
