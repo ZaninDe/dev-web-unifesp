@@ -10,6 +10,7 @@
 
    if($password==$checkPassword) {
 
+    //CRIPTOGRAFAR
     $newPassword = MD5($password);
 
     $stmt = $conn->prepare("INSERT INTO USERS(User, Password) VALUES (?,?)");
@@ -19,6 +20,9 @@
 
     $newID = $stmt->insert_id;
     echo "User created ID  = ".$newID;
+    echo '<br>';
+    echo  '<a href="index.html">Login</a>';
+
    } else {
        echo "The password not match";
        echo '<br><br>';
